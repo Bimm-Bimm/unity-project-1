@@ -1,0 +1,30 @@
+//UiHandler
+ public void OnNoSessionFound() 
+    {
+        ClearList();
+        Debug.Log("On no session found");
+        statusText.text = "No game session found (T.T)";
+        //statusPanel.gameObject.SetActive(true);
+    }
+    public void OnLookingForGameSession() 
+    {
+        ClearList();
+        Debug.Log("On looking for game session");
+        statusText.text = "On looking for game session (@-@)";
+       // statusPanel.gameObject.SetActive(true);
+       
+    }
+	
+//Mouse0Press
+if (hit.Distance == 0)
+        {
+            lrEndPoint = myCam.transform.position + myCam.transform.forward * maxMouse0Range;
+            lr.SetPosition(1, lrEndPoint);
+        }
+        else 
+        {
+            lrEndPoint = myCam.transform.position + myCam.transform.forward * hit.Distance;
+            lr.SetPosition(1, lrEndPoint);
+        }
+        
+        lr.enabled = true;

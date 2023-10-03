@@ -1,0 +1,48 @@
+//NetWork Setup
+
+public void CreateGame(string sessionName, string sceneName)
+    {
+        Debug.Log("create game");
+        Camera.main.gameObject.SetActive(false);
+        StartGame(GameMode.Host, sessionName, SceneUtility.GetBuildIndexByScenePath($"scene/{sceneName}"));
+       // StartGame(GameMode.Host, sessionName, 1);
+       // StartGame(GameMode.Host, sessionName, SceneUtility.GetBuildIndexByScenePath($"scene/{sceneName}"));
+        while (_runner == null)
+        {
+            Debug.Log("create game 1");
+            Camera.main.gameObject.SetActive(false);
+            //_sceneCam.SetActive(false);
+            StartGame(GameMode.Host, sessionName, SceneUtility.GetBuildIndexByScenePath($"scene/{sceneName}"));
+
+        }
+
+    }
+    public void JoinGame(SessionInfo sessionInfo)
+    {
+        Camera.main.gameObject.SetActive(false);
+        StartGame(GameMode.Client, sessionInfo.Name, SceneManager.GetActiveScene().buildIndex);
+        while (_runner == null)
+        {
+            Camera.main.gameObject.SetActive(false);
+            StartGame(GameMode.Client, sessionInfo.Name, 1);
+            //_sceneCam.SetActive(false);
+            //StartGame(GameMode.Client, sessionInfo.Name, SceneManager.GetActiveScene().buildIndex);
+
+        }
+
+    }
+
+    public void CreateGame(string sessionName, int sceneIndex)
+    {
+        Debug.Log("create game");
+        Camera.main.gameObject.SetActive(false);
+        StartGame(GameMode.Host, sessionName, sceneIndex);
+    }
+//Player Controler
+ else 
+        {
+            RPC_SetNickName(PlayerPrefs.GetString("PlayerName"));
+        }
+//Main menu
+networkSetup.CreateGame(playerName.text, 1);
+statusPanel.GetComponentInChildren<TMP_Text>().text = "ON JOINING GAME";		

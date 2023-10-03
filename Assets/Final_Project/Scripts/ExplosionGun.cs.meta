@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: e60b681a6e88ef440a353a0f83805726
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Runner: {instanceID: 0}
+  - Object: {instanceID: 0}
+  - _explosionGun: {instanceID: 0}
+  - _explosionBullet: {instanceID: 0}
+  - _firePoint: {instanceID: 0}
+  - _playerHolder: {fileID: 5874591315074138600, guid: 1ac95b2fe297bf744918ea10cf65d7d2, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
